@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-red-900">
+    <section className="relative py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-red-900" id="hero">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-4 h-4 bg-yellow-400 rounded-full animate-ping opacity-60"></div>
@@ -40,7 +40,7 @@ export const HeroSection: React.FC = () => {
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         {/* Character Icons */}
-        <div className="flex justify-center items-center space-x-8 mb-8">
+        <div className="flex justify-center items-center space-x-8 mb-12">
           <div className="relative">
             <Zap className="w-16 h-16 text-yellow-400 animate-pulse drop-shadow-2xl" />
             <div className="absolute inset-0 w-16 h-16 bg-yellow-400 rounded-full blur-xl opacity-30 animate-pulse"></div>
@@ -55,54 +55,79 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-blue-600 animate-gradient-shift font-orbitron tracking-wider">
-          MARVEL
-        </h1>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 font-orbitron">
-          MULTIVERSE HACKATHON
-        </h2>
-        
-        <div className="text-xl md:text-2xl text-gray-300 mb-8 font-bold tracking-wide">
-          <span className="text-yellow-400">BUILD.</span> 
-          <span className="text-red-500 mx-2">FIGHT.</span> 
-          <span className="text-blue-400">DOMINATE.</span>
+        {/* Mission Brief */}
+        <div className="mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 font-orbitron">
+            THE MULTIVERSE AWAITS
+          </h3>
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Three legendary forces unite for the ultimate innovation challenge. Choose your alliance, 
+            assemble your team, and compete for glory across dimensions.
+          </p>
+        </div>
+
+        {/* Event Details */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="bg-gradient-to-br from-yellow-900/30 to-red-900/30 rounded-xl p-6 border border-yellow-500/30">
+            <div className="text-3xl font-bold text-yellow-400 mb-2 font-orbitron">48 HOURS</div>
+            <div className="text-gray-300">Of Pure Innovation</div>
+          </div>
+          <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl p-6 border border-blue-500/30">
+            <div className="text-3xl font-bold text-blue-400 mb-2 font-orbitron">$100K</div>
+            <div className="text-gray-300">Total Prize Pool</div>
+          </div>
+          <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-xl p-6 border border-green-500/30">
+            <div className="text-3xl font-bold text-green-400 mb-2 font-orbitron">500+</div>
+            <div className="text-gray-300">Elite Participants</div>
+          </div>
         </div>
 
         {/* Countdown Timer */}
-        <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto mb-12">
-          {Object.entries(timeLeft).map(([unit, value], index) => (
-            <div key={unit} className="relative group">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-4 border border-gray-700 hover:border-yellow-400 transition-all duration-300 hover:scale-105">
-                <div className="text-2xl md:text-3xl font-bold text-white font-orbitron">
-                  {value.toString().padStart(2, '0')}
+        <div className="mb-12">
+          <h4 className="text-2xl font-bold text-white mb-6 font-orbitron">PORTAL OPENS IN:</h4>
+          <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto">
+            {Object.entries(timeLeft).map(([unit, value], index) => (
+              <div key={unit} className="relative group">
+                <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-4 border border-gray-700 hover:border-yellow-400 transition-all duration-300 hover:scale-105">
+                  <div className="text-2xl md:text-3xl font-bold text-white font-orbitron">
+                    {value.toString().padStart(2, '0')}
+                  </div>
+                  <div className="text-xs uppercase text-gray-400 tracking-wider">
+                    {unit}
+                  </div>
                 </div>
-                <div className="text-xs uppercase text-gray-400 tracking-wider">
-                  {unit}
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur"></div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur"></div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-red-600 to-yellow-600 text-white font-bold text-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <button className="group relative px-10 py-5 bg-gradient-to-r from-red-600 to-yellow-600 text-white font-bold text-xl rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <span className="relative z-10 flex items-center">
-              <Zap className="w-5 h-5 mr-2" />
+              <Zap className="w-6 h-6 mr-3" />
               JOIN THE MISSION
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-400 opacity-20 animate-pulse"></div>
           </button>
           
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <button className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-xl rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <span className="relative z-10 flex items-center">
-              <Play className="w-5 h-5 mr-2" />
+              <Play className="w-6 h-6 mr-3" />
               WATCH TRAILER
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
+        </div>
+
+        {/* Additional Info */}
+        <div className="mt-12 text-center">
+          <p className="text-gray-400 text-lg">
+            Registration closes in <span className="text-red-400 font-bold">7 days</span> • 
+            Limited spots available • <span className="text-yellow-400 font-bold">Early bird bonuses</span>
+          </p>
         </div>
       </div>
 

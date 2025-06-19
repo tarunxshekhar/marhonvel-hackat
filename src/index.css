@@ -168,6 +168,18 @@ html {
   background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%);
 }
 
+/* Video styling */
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Navigation backdrop blur */
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+
 /* Responsive text sizing */
 @media (max-width: 640px) {
   .text-responsive-xl {
@@ -208,4 +220,20 @@ button:focus-visible,
 a:focus-visible {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
+}
+
+/* Music player specific animations */
+@keyframes music-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+  }
+}
+
+.animate-music-pulse {
+  animation: music-pulse 2s ease-in-out infinite;
 }
