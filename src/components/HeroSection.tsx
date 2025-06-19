@@ -30,6 +30,24 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-red-900" id="hero">
+      {/* Only 2 small floating SVGs for Hero Section */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 left-1/5 animate-float-slow opacity-8">
+          <img 
+            src="https://res.cloudinary.com/dhrxupu5i/image/upload/v1750355424/1_kfge4p.svg" 
+            alt="Marvel Logo" 
+            className="w-6 h-6 filter drop-shadow-lg"
+          />
+        </div>
+        <div className="absolute bottom-1/3 right-1/6 animate-float-delayed opacity-10">
+          <img 
+            src="https://res.cloudinary.com/dhrxupu5i/image/upload/v1750355424/Avengers_Thanos_Infinity_pjoiyd.svg" 
+            alt="Infinity Gauntlet" 
+            className="w-5 h-5 filter drop-shadow-lg"
+          />
+        </div>
+      </div>
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-4 h-4 bg-yellow-400 rounded-full animate-ping opacity-60"></div>

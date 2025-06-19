@@ -73,7 +73,18 @@ export const TracksSection: React.FC = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black">
-      <div className="max-w-7xl mx-auto px-4">
+      {/* Only 1 small floating SVG for Tracks Section */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/3 right-1/8 animate-float-slow opacity-8">
+          <img 
+            src="https://res.cloudinary.com/dhrxupu5i/image/upload/v1750355424/1_kfge4p.svg" 
+            alt="Marvel Logo" 
+            className="w-6 h-6 filter drop-shadow-lg"
+          />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 font-orbitron">
