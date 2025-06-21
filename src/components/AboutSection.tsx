@@ -1,5 +1,16 @@
-import React from 'react';
-import { Zap, Shield, Skull, Users, Code, Trophy, Target, Star, Heart, Eye } from 'lucide-react';
+import React from "react";
+import {
+  Zap,
+  Shield,
+  Skull,
+  Users,
+  Code,
+  Trophy,
+  Target,
+  Star,
+  Heart,
+  Eye,
+} from "lucide-react";
 
 export const AboutSection: React.FC = () => {
   return (
@@ -7,16 +18,16 @@ export const AboutSection: React.FC = () => {
       {/* Only 2 small floating SVGs for About Section */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/5 left-1/8 animate-float-slow opacity-8">
-          <img 
-            src="https://res.cloudinary.com/dhrxupu5i/image/upload/v1750355424/1_kfge4p.svg" 
-            alt="Marvel Logo" 
+          <img
+            src="https://res.cloudinary.com/dhrxupu5i/image/upload/v1750355424/1_kfge4p.svg"
+            alt="Marvel Logo"
             className="w-7 h-7 filter drop-shadow-lg"
           />
         </div>
         <div className="absolute bottom-1/4 right-1/7 animate-float-delayed opacity-10">
-          <img 
-            src="https://img.freepik.com/premium-vector/illustration-robot-head_994245-9115.jpg" 
-            alt="Robot Head" 
+          <img
+            src="https://img.freepik.com/premium-vector/illustration-robot-head_994245-9115.jpg"
+            alt="Robot Head"
             className="w-6 h-6 rounded-full filter drop-shadow-lg"
           />
         </div>
@@ -29,8 +40,9 @@ export const AboutSection: React.FC = () => {
             THE MULTIVERSE COLLIDES
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            When genius meets justice and power converges with innovation, legends are born. 
-            Join forces with the greatest minds in the Marvel Universe.
+            When genius meets justice and power converges with innovation,
+            legends are born. Join forces with the greatest minds in the Marvel
+            Universe.
           </p>
         </div>
 
@@ -45,12 +57,17 @@ export const AboutSection: React.FC = () => {
                   <Zap className="w-12 h-12 text-yellow-400 mr-4" />
                   <div className="absolute inset-0 w-12 h-12 bg-yellow-400 rounded-full blur-lg opacity-30 animate-pulse"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-yellow-400 font-orbitron">IRON MAN</h3>
+                <h3 className="text-2xl font-bold text-yellow-400 font-orbitron">
+                  IRON MAN
+                </h3>
               </div>
-              <h4 className="text-xl font-semibold text-white mb-4">Tech Visionary</h4>
+              <h4 className="text-xl font-semibold text-white mb-4">
+                Tech Visionary
+              </h4>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Leading the charge in AI, IoT, and cutting-edge technology. Stark Industries' 
-                innovation meets your brilliant ideas to forge the future.
+                Leading the charge in AI, IoT, and cutting-edge technology.
+                Stark Industries' innovation meets your brilliant ideas to forge
+                the future.
               </p>
               <div className="flex items-center text-sm text-yellow-400">
                 <Code className="w-4 h-4 mr-2" />
@@ -68,12 +85,16 @@ export const AboutSection: React.FC = () => {
                   <Shield className="w-12 h-12 text-blue-400 mr-4 animate-spin-slow" />
                   <div className="absolute inset-0 w-12 h-12 bg-blue-400 rounded-full blur-lg opacity-30"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-blue-400 font-orbitron">CAPTAIN AMERICA</h3>
+                <h3 className="text-2xl font-bold text-blue-400 font-orbitron">
+                  CAPTAIN AMERICA
+                </h3>
               </div>
-              <h4 className="text-xl font-semibold text-white mb-4">Guardian of Innovation</h4>
+              <h4 className="text-xl font-semibold text-white mb-4">
+                Guardian of Innovation
+              </h4>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Defending the values of progress and justice. Build solutions that protect, 
-                serve, and uplift communities across the globe.
+                Defending the values of progress and justice. Build solutions
+                that protect, serve, and uplift communities across the globe.
               </p>
               <div className="flex items-center text-sm text-blue-400">
                 <Users className="w-4 h-4 mr-2" />
@@ -91,12 +112,16 @@ export const AboutSection: React.FC = () => {
                   <Skull className="w-12 h-12 text-green-400 mr-4 animate-pulse-doom" />
                   <div className="absolute inset-0 w-12 h-12 bg-green-400 rounded-full blur-lg opacity-30 animate-pulse-doom"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-green-400 font-cinzel">DOCTOR DOOM</h3>
+                <h3 className="text-2xl font-bold text-green-400 font-cinzel">
+                  DOCTOR DOOM
+                </h3>
               </div>
-              <h4 className="text-xl font-semibold text-white mb-4">Master of Chaos</h4>
+              <h4 className="text-xl font-semibold text-white mb-4">
+                Master of Chaos
+              </h4>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Where others see impossibility, Doom sees opportunity. Challenge the limits 
-                of technology and bend reality to your will.
+                Where others see impossibility, Doom sees opportunity. Challenge
+                the limits of technology and bend reality to your will.
               </p>
               <div className="flex items-center text-sm text-green-400">
                 <Trophy className="w-4 h-4 mr-2" />
@@ -117,12 +142,17 @@ export const AboutSection: React.FC = () => {
                   <Target className="w-12 h-12 text-red-400 mr-4 animate-pulse" />
                   <div className="absolute inset-0 w-12 h-12 bg-red-400 rounded-full blur-lg opacity-30 animate-pulse"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-red-400 font-orbitron">BLACK WIDOW</h3>
+                <h3 className="text-2xl font-bold text-red-400 font-orbitron">
+                  BLACK WIDOW
+                </h3>
               </div>
-              <h4 className="text-xl font-semibold text-white mb-4">Master Strategist</h4>
+              <h4 className="text-xl font-semibold text-white mb-4">
+                Master Strategist
+              </h4>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Precision, strategy, and flawless execution. Build solutions with surgical accuracy 
-                and tactical brilliance that leave no room for error.
+                Precision, strategy, and flawless execution. Build solutions
+                with surgical accuracy and tactical brilliance that leave no
+                room for error.
               </p>
               <div className="flex items-center text-sm text-red-400">
                 <Eye className="w-4 h-4 mr-2" />
@@ -140,12 +170,17 @@ export const AboutSection: React.FC = () => {
                   <Star className="w-12 h-12 text-red-500 mr-4 animate-magic-pulse" />
                   <div className="absolute inset-0 w-12 h-12 bg-red-500 rounded-full blur-lg opacity-30 animate-magic-pulse"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-red-500 font-cinzel">SCARLET WITCH</h3>
+                <h3 className="text-2xl font-bold text-red-500 font-cinzel">
+                  SCARLET WITCH
+                </h3>
               </div>
-              <h4 className="text-xl font-semibold text-white mb-4">Reality Shaper</h4>
+              <h4 className="text-xl font-semibold text-white mb-4">
+                Reality Shaper
+              </h4>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Bend the rules of possibility with chaos magic. Create solutions that rewrite 
-                reality and transform the impossible into inevitable.
+                Bend the rules of possibility with chaos magic. Create solutions
+                that rewrite reality and transform the impossible into
+                inevitable.
               </p>
               <div className="flex items-center text-sm text-red-400">
                 <Star className="w-4 h-4 mr-2" />
@@ -163,12 +198,17 @@ export const AboutSection: React.FC = () => {
                   <Heart className="w-12 h-12 text-yellow-400 mr-4 animate-pulse-slow" />
                   <div className="absolute inset-0 w-12 h-12 bg-yellow-400 rounded-full blur-lg opacity-30 animate-pulse-slow"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-yellow-400 font-orbitron">VISION</h3>
+                <h3 className="text-2xl font-bold text-yellow-400 font-orbitron">
+                  VISION
+                </h3>
               </div>
-              <h4 className="text-xl font-semibold text-white mb-4">Synthetic Perfection</h4>
+              <h4 className="text-xl font-semibold text-white mb-4">
+                Synthetic Perfection
+              </h4>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Perfect synthesis of mind and machine. Create harmonious solutions that bridge 
-                the gap between human intuition and computational power.
+                Perfect synthesis of mind and machine. Create harmonious
+                solutions that bridge the gap between human intuition and
+                computational power.
               </p>
               <div className="flex items-center text-sm text-yellow-400">
                 <Heart className="w-4 h-4 mr-2" />
@@ -181,28 +221,48 @@ export const AboutSection: React.FC = () => {
         {/* Enhanced Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="text-center">
-            <div className="text-4xl font-bold text-yellow-400 mb-2 font-orbitron">500+</div>
-            <div className="text-gray-400 uppercase tracking-wide">Participants</div>
+            <div className="text-4xl font-bold text-yellow-400 mb-2 font-orbitron">
+              800+
+            </div>
+            <div className="text-gray-400 uppercase tracking-wide">
+              Participants
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-blue-400 mb-2 font-orbitron">$100K</div>
-            <div className="text-gray-400 uppercase tracking-wide">Prize Pool</div>
+            <div className="text-4xl font-bold text-blue-400 mb-2 font-orbitron">
+              ₹200K
+            </div>
+            <div className="text-gray-400 uppercase tracking-wide">
+              Prize Pool
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-green-400 mb-2 font-orbitron">48</div>
+            <div className="text-4xl font-bold text-green-400 mb-2 font-orbitron">
+              48
+            </div>
             <div className="text-gray-400 uppercase tracking-wide">Hours</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-red-400 mb-2 font-orbitron">6</div>
+            <div className="text-4xl font-bold text-red-400 mb-2 font-orbitron">
+              6
+            </div>
             <div className="text-gray-400 uppercase tracking-wide">Heroes</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-purple-400 mb-2 font-orbitron">∞</div>
-            <div className="text-gray-400 uppercase tracking-wide">Possibilities</div>
+            <div className="text-4xl font-bold text-purple-400 mb-2 font-orbitron">
+              ∞
+            </div>
+            <div className="text-gray-400 uppercase tracking-wide">
+              Possibilities
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-pink-400 mb-2 font-orbitron">1</div>
-            <div className="text-gray-400 uppercase tracking-wide">Multiverse</div>
+            <div className="text-4xl font-bold text-pink-400 mb-2 font-orbitron">
+              1
+            </div>
+            <div className="text-gray-400 uppercase tracking-wide">
+              Multiverse
+            </div>
           </div>
         </div>
       </div>

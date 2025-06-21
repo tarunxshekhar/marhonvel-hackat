@@ -1,13 +1,37 @@
-import React, { useState } from 'react';
-import { Zap, Shield, Skull, Github, Twitter, Linkedin, Mail, MapPin } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Zap,
+  Shield,
+  Skull,
+  Twitter,
+  Linkedin,
+  Mail,
+  Contact,
+  Instagram,
+} from "lucide-react";
 
 export const Footer: React.FC = () => {
   const [activeIcon, setActiveIcon] = useState(0);
 
   const marvelIcons = [
-    { icon: Zap, color: 'text-yellow-400', name: 'Iron Man', bg: 'bg-yellow-400/20' },
-    { icon: Shield, color: 'text-blue-400', name: 'Captain America', bg: 'bg-blue-400/20' },
-    { icon: Skull, color: 'text-green-400', name: 'Doctor Doom', bg: 'bg-green-400/20' }
+    {
+      icon: Zap,
+      color: "text-yellow-400",
+      name: "Iron Man",
+      bg: "bg-yellow-400/20",
+    },
+    {
+      icon: Shield,
+      color: "text-blue-400",
+      name: "Captain America",
+      bg: "bg-blue-400/20",
+    },
+    {
+      icon: Skull,
+      color: "text-green-400",
+      name: "Doctor Doom",
+      bg: "bg-green-400/20",
+    },
   ];
 
   React.useEffect(() => {
@@ -29,19 +53,21 @@ export const Footer: React.FC = () => {
                 {marvelIcons.map((item, index) => {
                   const IconComponent = item.icon;
                   return (
-                    <div 
+                    <div
                       key={index}
                       className={`relative p-2 rounded-full transition-all duration-500 ${
-                        activeIcon === index ? item.bg : 'bg-gray-800'
+                        activeIcon === index ? item.bg : "bg-gray-800"
                       }`}
                     >
-                      <IconComponent 
+                      <IconComponent
                         className={`w-6 h-6 transition-colors duration-500 ${
-                          activeIcon === index ? item.color : 'text-gray-500'
-                        }`} 
+                          activeIcon === index ? item.color : "text-gray-500"
+                        }`}
                       />
                       {activeIcon === index && (
-                        <div className={`absolute inset-0 rounded-full ${item.bg} animate-ping`}></div>
+                        <div
+                          className={`absolute inset-0 rounded-full ${item.bg} animate-ping`}
+                        ></div>
                       )}
                     </div>
                   );
@@ -52,21 +78,34 @@ export const Footer: React.FC = () => {
               </h3>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              Where heroes, villains, and innovators collide to forge the future. 
-              Join the greatest hackathon in the multiverse and unleash your potential.
-            </p>
+              Where heroes, villains, and innovators collide to forge the
+              future. Join the greatest hackathon in the multiverse and unleash
+              your potential.
+            </p>{" "}
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-200">
-                <Github className="w-5 h-5" />
+              <a
+                href="https://www.instagram.com/gdgglau/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
+              >
+                <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors duration-200">
+              <a
+                href="https://www.linkedin.com/company/gdg-glau/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
+              >
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-400 transition-colors duration-200">
-                <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -78,16 +117,16 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2">
               {[
-                'About the Event',
-                'Tracks & Challenges',
-                'Prizes & Rewards',
-                'Schedule',
-                'Mentors',
-                'FAQs'
+                "About the Event",
+                "Tracks & Challenges",
+                "Prizes & Rewards",
+                "Schedule",
+                "Mentors",
+                "FAQs",
               ].map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-gray-300 hover:text-white transition-colors duration-200 block py-1"
                   >
                     {link}
@@ -101,32 +140,48 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold mb-4 text-blue-400 font-orbitron">
               MISSION CONTROL
-            </h4>
+            </h4>{" "}
             <div className="space-y-4">
               <div className="flex items-start">
-                <MapPin className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
+                <Contact className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">
-                    Stark Tower<br />
-                    New York City, NY<br />
-                    Earth-616
+                    Contact Numbers:
+                    <br />
+                    <a
+                      href="tel:+918533806906"
+                      className="text-green-400 hover:text-green-300 transition-colors duration-200"
+                    >
+                      +91 8533806906
+                    </a>
+                    <br />
+                    <a
+                      href="tel:+918445936898"
+                      className="text-green-400 hover:text-green-300 transition-colors duration-200"
+                    >
+                      +91 8445936898
+                    </a>
                   </p>
                 </div>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-yellow-400 mr-3" />
-                <p className="text-gray-300">
-                  support@marvelhackathon.com
-                </p>
+                <a
+                  href="mailto:gdgmathura85@gmail.com"
+                  className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200"
+                >
+                  gdgmathura85@gmail.com
+                </a>
               </div>
             </div>
-
             <div className="mt-6 p-4 bg-gradient-to-r from-gray-800 to-gray-700 rounded-lg border border-gray-600">
               <p className="text-sm text-gray-300">
-                <span className="text-green-400 font-semibold">Status:</span> Portal Active
+                <span className="text-green-400 font-semibold">Status:</span>{" "}
+                Portal Active
               </p>
               <p className="text-sm text-gray-300">
-                <span className="text-blue-400 font-semibold">Security:</span> SHIELD Protected
+                <span className="text-blue-400 font-semibold">Security:</span>{" "}
+                SHIELD Protected
               </p>
             </div>
           </div>
@@ -138,16 +193,26 @@ export const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 Marvel Multiverse Hackathon. All rights reserved across all dimensions.
-            </div>
+              © 2025 Marvel Multiverse Hackathon. All rights reserved across all
+              dimensions.
+            </div>{" "}
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
                 Code of Conduct
               </a>
             </div>
