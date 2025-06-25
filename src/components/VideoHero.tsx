@@ -1,4 +1,4 @@
-https://studyratna.co/wp-content/uploads/2025/06/New-Project-19-E09929F.mp4import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 export const VideoHero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
