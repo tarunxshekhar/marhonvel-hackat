@@ -4,6 +4,8 @@ import { VideoHero } from "./components/VideoHero";
 import { TitleSection } from "./components/TitleSection";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
+import { VisionSection } from "./components/VisionSection";
+import { InfinityTracksSection } from "./components/InfinityTracksSection";
 import { TracksSection } from "./components/TracksSection";
 import { PrizesSection } from "./components/PrizesSection";
 import { ScheduleSection } from "./components/ScheduleSection";
@@ -18,7 +20,8 @@ function App() {
       <TitleSection />
       <HeroSection />
       <AboutSection />
-      <TracksSection />
+      <VisionSection />
+      <InfinityTracksSection />
       <PrizesSection />
       <ScheduleSection />
       <Footer />
