@@ -7,7 +7,7 @@ export const PrizesSection: React.FC = () => {
       icon: Crown,
       title: "INFINITY GAUNTLET",
       subtitle: "Grand Prize",
-      amount: "₹50,000",
+      amount: "₹75,000",
       description:
         "Ultimate power deserves ultimate recognition. The winner wielding all six Infinity Stones of innovation.",
       gradient: "from-yellow-400 via-orange-500 to-red-500",
@@ -19,7 +19,7 @@ export const PrizesSection: React.FC = () => {
       icon: Shield,
       title: "VIBRANIUM SHIELD",
       subtitle: "Second Place",
-      amount: "₹30,000",
+      amount: "₹50,000",
       description:
         "Forged from the strongest metal on Earth. A prize worthy of the First Avenger's approval.",
       gradient: "from-blue-400 via-cyan-500 to-blue-600",
@@ -31,7 +31,7 @@ export const PrizesSection: React.FC = () => {
       icon: Zap,
       title: "ARC REACTOR",
       subtitle: "Third Place",
-      amount: "₹20,000",
+      amount: "₹25,000",
       description:
         "Clean, limitless energy. The heart of Iron Man's power, now fueling your future.",
       gradient: "from-cyan-400 via-blue-500 to-indigo-500",
@@ -45,25 +45,25 @@ export const PrizesSection: React.FC = () => {
     {
       icon: Star,
       title: "Best AI Innovation",
-      amount: "₹5,000",
+      amount: "₹10,000",
       color: "yellow",
     },
     {
       icon: Trophy,
       title: "Most Social Impact",
-      amount: "₹5,000",
+      amount: "₹10,000",
       color: "blue",
     },
     {
       icon: Gift,
       title: "Best Design",
-      amount: "₹5,000",
+      amount: "₹10,000",
       color: "purple",
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-slate-900">
+    <section id="prizes" className="py-20 bg-gradient-to-br from-black via-gray-900 to-slate-900">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -189,7 +189,7 @@ export const PrizesSection: React.FC = () => {
             <Trophy className="w-6 h-6 text-white mr-3" />
             <span className="text-white font-bold text-xl">
               Total Prize Pool:{" "}
-              <span className="text-2xl font-orbitron">₹200,000</span>
+              <span className="text-2xl font-orbitron">₹180,000</span>
             </span>
           </div>
         </div>
