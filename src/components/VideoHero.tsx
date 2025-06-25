@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+https://studyratna.co/wp-content/uploads/2025/06/New-Project-19-E09929F.mp4import React, { useRef, useEffect } from 'react';
 
 export const VideoHero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -39,7 +39,7 @@ export const VideoHero: React.FC = () => {
           poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23000'/%3E%3C/svg%3E"
         >
           <source 
-            src="https://studyratna.co/wp-content/uploads/2025/06/Generated-File-June-19-2025-10_19PM.mp4" 
+            src="https://studyratna.co/wp-content/uploads/2025/06/New-Project-19-E09929F.mp4" 
             type="video/mp4" 
           />
         </video>
