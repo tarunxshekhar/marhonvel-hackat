@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Brain, Shield, Lock, Blocks, Lightbulb, Smartphone } from 'lucide-react';
+import { InfinityStoneModal } from './InfinityStoneModal';
 
 export const InfinityTracksSection: React.FC = () => {
   const [activeStone, setActiveStone] = useState<number | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedStone, setSelectedStone] = useState<any>(null);
 
   const infinityStones = [
     {
@@ -15,7 +18,8 @@ export const InfinityTracksSection: React.FC = () => {
       borderColor: "border-yellow-500/50",
       description: "Harness the power of artificial intelligence and machine learning to create intelligent solutions that can think, learn, and adapt.",
       powers: ["Neural Networks", "Deep Learning", "Computer Vision", "NLP"],
-      glowColor: "shadow-yellow-500/50"
+      glowColor: "shadow-yellow-500/50",
+      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWc94l1cvgAb_Qdj6eSayM9RDY6FnterlC2kXeooXVToqObBS-hfAWXna30TOPeBpzwt11xRa8zlJe1m6FhDZ9j6dQZg_o2z3c5eWu6IGGltluiMIaRFloeUEBxpHshxteDi1u_b9LwHcLWl2-zn_uxsltMVU7HUoIEgN4-37rm21Co1H3lY_NJlFeCuU/s640/mind.png"
     },
     {
       name: "SPACE STONE",
@@ -27,7 +31,8 @@ export const InfinityTracksSection: React.FC = () => {
       borderColor: "border-blue-500/50",
       description: "Contribute to the open source universe, building tools and platforms that benefit developers worldwide.",
       powers: ["GitHub Projects", "Community Tools", "Developer APIs", "Libraries"],
-      glowColor: "shadow-blue-500/50"
+      glowColor: "shadow-blue-500/50",
+      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhN4KcDHKYeeqlNrgrXc9nU2hvfvQl8poiSHM1Z8j_ufaaaez8hmyWieR6nieQ8xZbZIqAaTf1DrZA-vS7yFPigj9Zv2FloSoXTi09p7Wm1Rylozq5Yit9Zi58k29LZl_6K7X8WhijiiDsnAhNKObKCE16-rLv8ZSHMInYwDVWhlZMWhFfmS0-AZqKr7TU/s640/space.png"
     },
     {
       name: "REALITY STONE",
@@ -39,7 +44,8 @@ export const InfinityTracksSection: React.FC = () => {
       borderColor: "border-red-500/50",
       description: "Bend the reality of digital security, creating impenetrable defenses against cyber threats and vulnerabilities.",
       powers: ["Threat Detection", "Encryption", "Secure Systems", "Privacy Tools"],
-      glowColor: "shadow-red-500/50"
+      glowColor: "shadow-red-500/50",
+      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivOPusx7tL9atpNTzr2fYmQwMGzhH6R5TQzjpHAqPC_1XQBji9jvqWt4huJ9u1P8RU3AMGCJlx-pX_Z4vkJcQT0vB9yxZghyphenhyphenzgfk7iSWNRPjuCIZrdmRWa1R7IAKMtFuRFw5516BPvWRV1PImVFj8XbSk53rCsJUnLxN9thFO1mZ7kSSEKLYSvIEZ9HsE/s640/reality.png"
     },
     {
       name: "POWER STONE",
@@ -51,7 +57,8 @@ export const InfinityTracksSection: React.FC = () => {
       borderColor: "border-purple-500/50",
       description: "Wield the raw power of blockchain technology to create decentralized solutions and revolutionary financial systems.",
       powers: ["Smart Contracts", "DeFi", "NFTs", "Crypto Solutions"],
-      glowColor: "shadow-purple-500/50"
+      glowColor: "shadow-purple-500/50",
+      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvWOSGHzBpOZ1ZIXqxBqJtfVdapnUsr_Tb1j4Xv12cmvdbTu4xba3TT8SUZZGyQC7bMBM_m0pHt5wJA-pWLFN4ftiIuyXTmF3NuWcdkdLNDz1bVbUr9kDrCbiEXTznlCUzqmJ56yBHuiHtubBMYeP6Lyr5I4S3YifWJA8HaeL1bjkk1klDlVm5eEZ64Aw/s640/power.png"
     },
     {
       name: "TIME STONE",
@@ -63,7 +70,8 @@ export const InfinityTracksSection: React.FC = () => {
       borderColor: "border-green-500/50",
       description: "Manipulate time itself with innovative solutions that transcend traditional boundaries and create the future.",
       powers: ["Creative Solutions", "Cross-Domain", "Future Tech", "Breakthrough Ideas"],
-      glowColor: "shadow-green-500/50"
+      glowColor: "shadow-green-500/50",
+      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgQCXWesYXsKO19vphfTWP90dkTuobKRJZYeJFU66PoHebQNoAqAB0YRI_NjY1K3WxTF3uxeH-JHkU5QN7KwBihy4t4TuZ0oXz1Y2mNmZival0EmaBjMEjVAObfLMbn2aQ_lRBrIfee7WKgKzCnxcWXW7HxOtwmLcbvjsF7E4RaxIeahyOaovbRo4zE44/s640/time.png"
     },
     {
       name: "SOUL STONE",
@@ -75,9 +83,20 @@ export const InfinityTracksSection: React.FC = () => {
       borderColor: "border-orange-500/50",
       description: "Connect with the soul of mobile technology, creating apps and experiences that touch millions of lives.",
       powers: ["Native Apps", "Cross-Platform", "AR/VR", "IoT Integration"],
-      glowColor: "shadow-orange-500/50"
+      glowColor: "shadow-orange-500/50",
+      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWVIC0KzvwyXjodyaRFkHTRz0jZeUX4_LrWtP9lnWzB4DFqBzTWmq1RQ9pL_jDLAcfJ8PxEki2ZwVGEQNNLvd0As7XWBMtQHNqchGmDr5typqnfELiKBlK0S2cugrx-WExSiocQDpXjGBTePmsXiFR-SImGkDcsYxuz7MDSebITgLm9id0IMWNhF0TbVI/s640/soul.png"
     }
   ];
+
+  const handleClaimStone = (stone: any) => {
+    setSelectedStone(stone);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedStone(null);
+  };
 
   return (
     <section id="tracks" className="py-20 bg-gradient-to-br from-black via-gray-900 to-purple-900 relative overflow-hidden">
@@ -171,7 +190,10 @@ export const InfinityTracksSection: React.FC = () => {
                     </div>
 
                     {/* Stone Activation Button */}
-                    <button className={`w-full py-3 bg-gradient-to-r ${stone.gradient} text-white font-bold rounded-lg transform transition-all duration-300 hover:scale-105 relative overflow-hidden group`}>
+                    <button 
+                      onClick={() => handleClaimStone(stone)}
+                      className={`w-full py-3 bg-gradient-to-r ${stone.gradient} text-white font-bold rounded-lg transform transition-all duration-300 hover:scale-105 relative overflow-hidden group`}
+                    >
                       <span className="relative z-10">CLAIM THIS STONE</span>
                       <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                     </button>
@@ -214,6 +236,17 @@ export const InfinityTracksSection: React.FC = () => {
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
       <div className="absolute top-1/3 right-10 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
       <div className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-2000"></div>
+
+      {/* Infinity Stone Modal */}
+      {selectedStone && (
+        <InfinityStoneModal
+          isOpen={modalOpen}
+          onClose={closeModal}
+          stoneName={selectedStone.name}
+          stoneImage={selectedStone.image}
+          stoneGradient={selectedStone.gradient}
+        />
+      )}
     </section>
   );
 };
