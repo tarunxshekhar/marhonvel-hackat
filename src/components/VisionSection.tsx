@@ -139,11 +139,17 @@ export const VisionSection: React.FC = () => {
               depth over superficiality, and impact over income.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200 relative overflow-hidden group">
+              <button 
+                onClick={() => scrollToSection('tracks')}
+                className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200 relative overflow-hidden group"
+              >
                 <span className="relative z-10">START BUILDING</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
-              <button className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200 relative overflow-hidden group">
+              <button 
+                onClick={() => window.open('https://www.instagram.com/reel/DLZbFcFThx0/', '_blank')}
+                className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200 relative overflow-hidden group"
+              >
                 <span className="relative z-10">THINK DEEPER</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
@@ -158,4 +164,11 @@ export const VisionSection: React.FC = () => {
       <div className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-2000"></div>
     </section>
   );
+};
+// Helper function to scroll to section
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
 };
