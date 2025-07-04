@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Zap, Shield, Skull, Menu, X } from 'lucide-react';
+import { PopupModal } from './PopupModal';
 
 export const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeModal, setActiveModal] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,14 +25,99 @@ export const Navigation: React.FC = () => {
   };
 
   const navItems = [
-    { name: 'About', href: 'about' },
-    { name: 'Vision', href: 'vision' },
-    { name: 'Tracks', href: 'tracks' },
-    { name: 'Prizes', href: 'prizes' },
-    { name: 'Schedule', href: 'schedule' }
+    { name: 'About', href: 'about', type: 'scroll' },
+    { name: 'Vision', href: 'vision', type: 'scroll' },
+    { name: 'Tracks', href: 'tracks', type: 'scroll' },
+    { name: 'Prizes', href: 'prizes', type: 'scroll' },
+    { name: 'Schedule', href: 'schedule', type: 'scroll' },
+    { name: 'Mentors', href: 'mentors', type: 'modal' },
+    { name: 'FAQs', href: 'faqs', type: 'modal' }
   ];
 
+  const handleNavClick = (item: any) => {
+    if (item.type === 'scroll') {
+      scrollToSection(item.href);
+    } else if (item.type === 'modal') {
+      setActiveModal(item.href);
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const renderModalContent = () => {
+    switch (activeModal) {
+      case 'mentors':
+        return (
+          <div className="space-y-6">
+            <p className="text-lg leading-relaxed">
+              Our mentors are industry experts and Marvel Universe legends who will guide you through your journey:
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-yellow-900/30 to-red-900/30 rounded-xl p-6 border border-yellow-500/30">
+                <h3 className="text-xl font-bold text-yellow-400 mb-2">Tony Stark</h3>
+                <p className="text-gray-300">AI/ML and Innovation Expert</p>
+              </div>
+              <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl p-6 border border-blue-500/30">
+                <h3 className="text-xl font-bold text-blue-400 mb-2">Steve Rogers</h3>
+                <p className="text-gray-300">Leadership and Team Building</p>
+              </div>
+              <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-xl p-6 border border-green-500/30">
+                <h3 className="text-xl font-bold text-green-400 mb-2">Victor Von Doom</h3>
+                <p className="text-gray-300">Advanced Technology and Strategy</p>
+              </div>
+              <div className="bg-gradient-to-br from-red-900/30 to-pink-900/30 rounded-xl p-6 border border-red-500/30">
+                <h3 className="text-xl font-bold text-red-400 mb-2">Natasha Romanoff</h3>
+                <p className="text-gray-300">Cybersecurity and Tactical Planning</p>
+              </div>
+            </div>
+            <p className="text-center text-gray-400 mt-6">
+              More mentors will be announced soon. Stay tuned for updates!
+            </p>
+          </div>
+        );
+      case 'faqs':
+        return (
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl p-6 border border-purple-500/30">
+                <h3 className="text-lg font-bold text-purple-400 mb-2">Q: Who can participate?</h3>
+                <p className="text-gray-300">A: Students from all universities and colleges are welcome to participate. Teams can have 2-4 members.</p>
+              </div>
+              <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-xl p-6 border border-blue-500/30">
+                <h3 className="text-lg font-bold text-blue-400 mb-2">Q: Is there a registration fee?</h3>
+                <p className="text-gray-300">A: No, the hackathon is completely free to participate in.</p>
+              </div>
+              <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-xl p-6 border border-green-500/30">
+                <h3 className="text-lg font-bold text-green-400 mb-2">Q: What should I bring?</h3>
+                <p className="text-gray-300">A: Bring your laptop, chargers, and your creativity! Food and accommodation will be provided.</p>
+              </div>
+              <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded-xl p-6 border border-yellow-500/30">
+                <h3 className="text-lg font-bold text-yellow-400 mb-2">Q: How are teams formed?</h3>
+                <p className="text-gray-300">A: You can register with your existing team or join our team formation session at the event.</p>
+              </div>
+              <div className="bg-gradient-to-br from-red-900/30 to-pink-900/30 rounded-xl p-6 border border-red-500/30">
+                <h3 className="text-lg font-bold text-red-400 mb-2">Q: What technologies can we use?</h3>
+                <p className="text-gray-300">A: Any technology stack is allowed. We encourage innovation and creativity in your choice of tools.</p>
+              </div>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
+  const getModalTitle = () => {
+    switch (activeModal) {
+      case 'mentors':
+        return 'MARVEL MENTORS';
+      case 'faqs':
+        return 'FREQUENTLY ASKED QUESTIONS';
+      default:
+        return '';
+    }
+  };
   return (
+    <>
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
         ? 'bg-black/90 backdrop-blur-lg border-b border-gray-800' 
@@ -59,7 +146,7 @@ export const Navigation: React.FC = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavClick(item)}
                 className="text-gray-300 hover:text-white transition-colors duration-200 font-medium relative group"
               >
                 {item.name}
@@ -98,7 +185,7 @@ export const Navigation: React.FC = () => {
               {navItems.map((item, index) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavClick(item)}
                   className="block w-full text-left text-gray-300 hover:text-white transition-colors duration-200 font-medium py-2 relative group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -118,5 +205,15 @@ export const Navigation: React.FC = () => {
         )}
       </div>
     </nav>
+
+    {/* Modal */}
+    <PopupModal
+      isOpen={activeModal !== null}
+      onClose={() => setActiveModal(null)}
+      title={getModalTitle()}
+    >
+      {renderModalContent()}
+    </PopupModal>
+    </>
   );
 };

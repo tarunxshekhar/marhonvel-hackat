@@ -57,7 +57,7 @@ export const ScheduleSection: React.FC = () => {
   };
   const scheduleItems = [
     {
-      time: "7th July",
+      time: "5th July",
       title: "REGISTRATION OPENS",
       description: "Teams can start registering on the portal",
       icon: Users,
@@ -258,11 +258,28 @@ export const ScheduleSection: React.FC = () => {
               Save the date and prepare for 48 hours of legendary innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200">
+              <button 
+                onClick={() => {
+                  const event = {
+                    title: 'Marvel Multiverse Hackathon',
+                    start: '2025-09-11T09:00:00',
+                    end: '2025-09-13T18:00:00',
+                    description: '48-hour hackathon at GLA University Noida Campus',
+                    location: 'GLA University, Noida Campus'
+                  };
+                  
+                  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start.replace(/[-:]/g, '')}/${event.end.replace(/[-:]/g, '')}&details=${encodeURIComponent(event.description)}&location=${encodeURIComponent(event.location)}`;
+                  window.open(googleCalendarUrl, '_blank');
+                }}
+                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200"
+              >
                 <Calendar className="w-5 h-5 inline mr-2" />
                 ADD TO CALENDAR
               </button>
-              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200">
+              <button 
+                onClick={() => window.open('https://maps.app.goo.gl/Sm1ttCfNViM7UboY8', '_blank')}
+                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200"
+              >
                 <MapPin className="w-5 h-5 inline mr-2" />
                 GET DIRECTIONS
               </button>

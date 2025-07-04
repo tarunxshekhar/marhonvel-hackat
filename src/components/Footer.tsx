@@ -9,9 +9,11 @@ import {
   Contact,
   Instagram,
 } from "lucide-react";
+import { PopupModal } from './PopupModal';
 
 export const Footer: React.FC = () => {
   const [activeIcon, setActiveIcon] = useState(0);
+  const [activeModal, setActiveModal] = useState<string | null>(null);
 
   const marvelIcons = [
     {
@@ -41,7 +43,174 @@ export const Footer: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleFooterLinkClick = (link: string) => {
+    switch (link) {
+      case 'About the Event':
+        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'Tracks & Challenges':
+        document.getElementById('tracks')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'Prizes & Rewards':
+        document.getElementById('prizes')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'Schedule':
+        document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'Mentors':
+        setActiveModal('mentors');
+        break;
+      case 'FAQs':
+        setActiveModal('faqs');
+        break;
+      case 'Privacy Policy':
+        setActiveModal('privacy');
+        break;
+      case 'Terms of Service':
+        setActiveModal('terms');
+        break;
+      case 'Code of Conduct':
+        setActiveModal('conduct');
+        break;
+      default:
+        break;
+    }
+  };
+
+  const renderModalContent = () => {
+    switch (activeModal) {
+      case 'mentors':
+        return (
+          <div className="space-y-6">
+            <p className="text-lg leading-relaxed">
+              Our mentors are industry experts and Marvel Universe legends who will guide you through your journey:
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-yellow-900/30 to-red-900/30 rounded-xl p-6 border border-yellow-500/30">
+                <h3 className="text-xl font-bold text-yellow-400 mb-2">Tony Stark</h3>
+                <p className="text-gray-300">AI/ML and Innovation Expert</p>
+              </div>
+              <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl p-6 border border-blue-500/30">
+                <h3 className="text-xl font-bold text-blue-400 mb-2">Steve Rogers</h3>
+                <p className="text-gray-300">Leadership and Team Building</p>
+              </div>
+              <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-xl p-6 border border-green-500/30">
+                <h3 className="text-xl font-bold text-green-400 mb-2">Victor Von Doom</h3>
+                <p className="text-gray-300">Advanced Technology and Strategy</p>
+              </div>
+              <div className="bg-gradient-to-br from-red-900/30 to-pink-900/30 rounded-xl p-6 border border-red-500/30">
+                <h3 className="text-xl font-bold text-red-400 mb-2">Natasha Romanoff</h3>
+                <p className="text-gray-300">Cybersecurity and Tactical Planning</p>
+              </div>
+            </div>
+          </div>
+        );
+      case 'faqs':
+        return (
+          <div className="space-y-4">
+            <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl p-6 border border-purple-500/30">
+              <h3 className="text-lg font-bold text-purple-400 mb-2">Q: Who can participate?</h3>
+              <p className="text-gray-300">A: Students from all universities and colleges are welcome to participate. Teams can have 2-4 members.</p>
+            </div>
+            <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-xl p-6 border border-blue-500/30">
+              <h3 className="text-lg font-bold text-blue-400 mb-2">Q: Is there a registration fee?</h3>
+              <p className="text-gray-300">A: No, the hackathon is completely free to participate in.</p>
+            </div>
+            <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-xl p-6 border border-green-500/30">
+              <h3 className="text-lg font-bold text-green-400 mb-2">Q: What should I bring?</h3>
+              <p className="text-gray-300">A: Bring your laptop, chargers, and your creativity! Food and accommodation will be provided.</p>
+            </div>
+          </div>
+        );
+      case 'privacy':
+        return (
+          <div className="space-y-4">
+            <p className="text-lg leading-relaxed">
+              We are committed to protecting your privacy and personal information during the Marvel Multiverse Hackathon.
+            </p>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-lg font-bold text-purple-400 mb-2">Information We Collect</h3>
+                <p className="text-gray-300">We collect only necessary information for registration and event management purposes.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-blue-400 mb-2">How We Use Your Information</h3>
+                <p className="text-gray-300">Your information is used solely for hackathon organization, communication, and prize distribution.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-green-400 mb-2">Data Security</h3>
+                <p className="text-gray-300">We implement appropriate security measures to protect your personal information.</p>
+              </div>
+            </div>
+          </div>
+        );
+      case 'terms':
+        return (
+          <div className="space-y-4">
+            <p className="text-lg leading-relaxed">
+              By participating in the Marvel Multiverse Hackathon, you agree to the following terms and conditions:
+            </p>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-lg font-bold text-purple-400 mb-2">Participation</h3>
+                <p className="text-gray-300">Participants must be students and follow all event guidelines and rules.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-blue-400 mb-2">Intellectual Property</h3>
+                <p className="text-gray-300">Participants retain ownership of their projects while granting event organizers rights to showcase work.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-green-400 mb-2">Conduct</h3>
+                <p className="text-gray-300">All participants must maintain professional and respectful behavior throughout the event.</p>
+              </div>
+            </div>
+          </div>
+        );
+      case 'conduct':
+        return (
+          <div className="space-y-4">
+            <p className="text-lg leading-relaxed">
+              The Marvel Multiverse Hackathon is committed to providing a safe, inclusive, and respectful environment for all participants.
+            </p>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-lg font-bold text-purple-400 mb-2">Respect and Inclusion</h3>
+                <p className="text-gray-300">We welcome participants from all backgrounds and expect everyone to treat others with respect and dignity.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-blue-400 mb-2">Prohibited Behavior</h3>
+                <p className="text-gray-300">Harassment, discrimination, or any form of inappropriate behavior will not be tolerated.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-green-400 mb-2">Reporting</h3>
+                <p className="text-gray-300">If you experience or witness any violations, please report them to event organizers immediately.</p>
+              </div>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
+  const getModalTitle = () => {
+    switch (activeModal) {
+      case 'mentors':
+        return 'MARVEL MENTORS';
+      case 'faqs':
+        return 'FREQUENTLY ASKED QUESTIONS';
+      case 'privacy':
+        return 'PRIVACY POLICY';
+      case 'terms':
+        return 'TERMS OF SERVICE';
+      case 'conduct':
+        return 'CODE OF CONDUCT';
+      default:
+        return '';
+    }
+  };
   return (
+    <>
     <footer className="bg-gradient-to-br from-black via-gray-900 to-slate-900 text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -125,12 +294,12 @@ export const Footer: React.FC = () => {
                 "FAQs",
               ].map((link, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => handleFooterLinkClick(link)}
                     className="text-gray-300 hover:text-white transition-colors duration-200 block py-1"
                   >
                     {link}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -197,24 +366,24 @@ export const Footer: React.FC = () => {
               dimensions.
             </div>{" "}
             <div className="flex space-x-6 text-sm">
-              <a
-                href="#"
+              <button
+                onClick={() => handleFooterLinkClick('Privacy Policy')}
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="#"
+              </button>
+              <button
+                onClick={() => handleFooterLinkClick('Terms of Service')}
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
                 Terms of Service
-              </a>
-              <a
-                href="#"
+              </button>
+              <button
+                onClick={() => handleFooterLinkClick('Code of Conduct')}
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
                 Code of Conduct
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -224,5 +393,15 @@ export const Footer: React.FC = () => {
       <div className="absolute bottom-0 left-1/4 w-96 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-32 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
     </footer>
+
+    {/* Modal */}
+    <PopupModal
+      isOpen={activeModal !== null}
+      onClose={() => setActiveModal(null)}
+      title={getModalTitle()}
+    >
+      {renderModalContent()}
+    </PopupModal>
+    </>
   );
 };
