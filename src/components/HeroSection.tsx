@@ -11,7 +11,7 @@ export const HeroSection: React.FC = () => {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const targetDate = new Date("2025-07-07T00:00:00").getTime();
+      const targetDate = new Date("2025-07-19T23:59:59").getTime();
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -120,7 +120,7 @@ export const HeroSection: React.FC = () => {
         {/* Countdown Timer */}
         <div className="mb-12">
           <h4 className="text-2xl font-bold text-white mb-6 font-orbitron">
-            PORTAL OPENS IN:
+            ROUND 1 ENDS IN:
           </h4>
           <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto">
             {Object.entries(timeLeft).map(([unit, value], index) => (
@@ -140,14 +140,19 @@ export const HeroSection: React.FC = () => {
         </div>
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <button className="group relative px-10 py-5 bg-gradient-to-r from-red-600 to-yellow-600 text-white font-bold text-xl rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <a 
+            href="https://www.commudle.com/communities/articode/hackathons/hackcentrix"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative px-10 py-5 bg-gradient-to-r from-red-600 to-yellow-600 text-white font-bold text-xl rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+          >
             <span className="relative z-10 flex items-center">
               <Zap className="w-6 h-6 mr-3" />
               JOIN THE MISSION
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-400 opacity-20 animate-pulse"></div>
-          </button>
+          </a>
 
           <button className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-xl rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <a 
@@ -165,10 +170,8 @@ export const HeroSection: React.FC = () => {
         {/* Additional Info */}
         <div className="mt-12 text-center">
           <p className="text-gray-400 text-lg">
-            Registration opens on{" "}
-            <span className="text-green-400 font-bold">July 5th, 2025</span> •
-            Registration closes on{" "}
-            <span className="text-red-400 font-bold">July 19th</span> •{" "}
+            Round 1 ends on{" "}
+            <span className="text-red-400 font-bold">July 19th, 2025</span> •{" "}
             <span className="text-yellow-400 font-bold">
               Multi-phase competition
             </span>
