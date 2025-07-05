@@ -45,19 +45,19 @@ export const PrizesSection: React.FC = () => {
     {
       icon: Star,
       title: "Best AI Innovation",
-      amount: "₹10,000",
+      amount: "₹5,000",
       color: "yellow",
     },
     {
       icon: Trophy,
       title: "Most Social Impact",
-      amount: "₹10,000",
+      amount: "₹5,000",
       color: "blue",
     },
     {
       icon: Gift,
       title: "Best Design",
-      amount: "₹10,000",
+      amount: "₹5,000",
       color: "purple",
     },
   ];
@@ -189,7 +189,7 @@ export const PrizesSection: React.FC = () => {
             <Trophy className="w-6 h-6 text-white mr-3" />
             <span className="text-white font-bold text-xl">
               Total Prize Pool:{" "}
-              <span className="text-2xl font-orbitron">₹130,000</span>
+              <span className="text-2xl font-orbitron">₹1,50,000+</span>
             </span>
           </div>
         </div>
