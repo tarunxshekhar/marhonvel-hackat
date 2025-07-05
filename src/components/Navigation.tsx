@@ -153,13 +153,15 @@ export const Navigation: React.FC = () => {
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-red-500 group-hover:w-full transition-all duration-300"></div>
               </button>
             ))}
-            <button 
-              onClick={() => scrollToSection('hero')}
+            <a 
+              href="https://www.commudle.com/communities/articode/hackathons/hackcentrix"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2 bg-gradient-to-r from-red-600 to-yellow-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200 relative overflow-hidden group"
             >
               <span className="relative z-10">JOIN NOW</span>
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -193,13 +195,15 @@ export const Navigation: React.FC = () => {
                   <div className="absolute left-0 top-0 w-0 h-full bg-gradient-to-r from-yellow-400/20 to-red-500/20 group-hover:w-full transition-all duration-300 rounded"></div>
                 </button>
               ))}
-              <button 
-                onClick={() => scrollToSection('hero')}
+              <a 
+                href="https://www.commudle.com/communities/articode/hackathons/hackcentrix"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full px-6 py-3 bg-gradient-to-r from-red-600 to-yellow-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200 relative overflow-hidden group"
               >
                 <span className="relative z-10">JOIN NOW</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
+              </a>
             </div>
           </div>
         )}
