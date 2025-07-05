@@ -1,13 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
 export const VideoHero: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(console.error);
-    }
-  }, []);
 
   return (
     <section className="relative h-screen overflow-hidden">
@@ -15,7 +8,6 @@ export const VideoHero: React.FC = () => {
       <div className="absolute inset-0">
         {/* Mobile Video */}
         <video
-          ref={videoRef}
           className="w-full h-full object-cover md:hidden"
           autoPlay
           muted
