@@ -139,13 +139,15 @@ export const VisionSection: React.FC = () => {
               depth over superficiality, and impact over income.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => scrollToSection('tracks')}
+              <a 
+                href="https://www.commudle.com/communities/articode/hackathons/hackcentrix"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200 relative overflow-hidden group"
               >
                 <span className="relative z-10">START BUILDING</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
+              </a>
               <button 
                 onClick={() => window.open('https://www.instagram.com/reel/DLZbFcFThx0/', '_blank')}
                 className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200 relative overflow-hidden group"
