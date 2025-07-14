@@ -4,7 +4,7 @@ import { Zap, Shield, Skull, Cpu, Target, Atom, Heart, Brain, Eye, Flame, Snowfl
 export const FloatingElements: React.FC = () => {
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      {/* Priority SVG - Main Marvel Logo (only 3 instances, well spaced) */}
+      {/* Priority SVG - Main Marvel Logo (only 3 instances, well spaccgcgced) */}
       <div className="absolute top-1/4 left-1/6 animate-float-slow opacity-12">
         <img 
           src="https://res.cloudinary.com/dhrxupu5i/image/upload/v1750355424/1_kfge4p.svg" 
