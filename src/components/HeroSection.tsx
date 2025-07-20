@@ -11,7 +11,7 @@ export const HeroSection: React.FC = () => {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const targetDate = new Date("2025-08-14T23:59:59").getTime();
+      const targetDate = new Date("2025-07-23T00:00:00").getTime();
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -120,7 +120,7 @@ export const HeroSection: React.FC = () => {
         {/* Countdown Timer */}
         <div className="mb-12">
           <h4 className="text-2xl font-bold text-white mb-6 font-orbitron">
-            REGISTRATION ENDS IN:
+            REGISTRATION STARTS IN:
           </h4>
           <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto">
             {Object.entries(timeLeft).map(([unit, value], index) => (
@@ -170,6 +170,8 @@ export const HeroSection: React.FC = () => {
         {/* Additional Info */}
         <div className="mt-12 text-center">
           <p className="text-gray-400 text-lg">
+            Registration starts on{" "}
+            <span className="text-green-400 font-bold">July 23rd, 2025</span> •{" "}
             Registration ends on{" "}
             <span className="text-red-400 font-bold">August 14th, 2025</span> •{" "}
             <span className="text-yellow-400 font-bold">

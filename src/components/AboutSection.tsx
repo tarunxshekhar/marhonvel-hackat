@@ -230,7 +230,7 @@ export const AboutSection: React.FC = () => {
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-blue-400 mb-2 font-orbitron">
-              ₹200K
+              ₹150K
             </div>
             <div className="text-gray-400 uppercase tracking-wide">
               Prize Pool
