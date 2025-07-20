@@ -106,7 +106,7 @@ export const HeroSection: React.FC = () => {
           </div>
           <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl p-6 border border-blue-500/30">
             <div className="text-3xl font-bold text-blue-400 mb-2 font-orbitron">
-              ₹200K
+              ₹150K
             </div>
             <div className="text-gray-300">Total Prize Pool</div>
           </div>

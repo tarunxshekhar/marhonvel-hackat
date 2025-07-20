@@ -22,7 +22,7 @@ function App() {
       <AboutSection />
       <VisionSection />
       {/* <InfinityTracksSection /> */}
-      <PrizesSection />
+      {/* <PrizesSection /> */}
       {/* <ScheduleSection /> */}
       <Footer />
       <MusicPlayer />
