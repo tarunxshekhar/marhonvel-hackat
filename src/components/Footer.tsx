@@ -248,8 +248,8 @@ export const Footer: React.FC = () => {
             </div>
             <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
               Where heroes, villains, and innovators collide to forge the
-              future. Join the greatest hackathon in the multiverse and unleash
-              your potential.
+              future. Join the greatest 36-hour hackathon in the multiverse and unleash
+              your potential. Registration: ₹40 per team member.
             </p>{" "}
             <div className="flex space-x-4">
               <a
